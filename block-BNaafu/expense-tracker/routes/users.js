@@ -41,9 +41,18 @@ router.post('/login', (req, res, next) => {
        
         req.session.userId = user.id
         console.log(req.session.userId)
-        res.redirect('/expenses/')
+        res.redirect('/expenses/dashboard')
       }
     })
   })
+})
+
+//OTP-Form
+router.get('/otp-form',(req,res)=>{
+  if(!req.user){
+  res.render('otp',{email:"email-send"})
+  }else{
+    res.redirect("/expenses/dashboard")
+  }
 })
 module.exports = router

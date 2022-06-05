@@ -1,0 +1,31 @@
+<%- include('partial/header'); %>
+<main>
+    <section>
+      <% list.forEach(data=>{%>
+      
+      <%if(data.type=="income"){%>
+            <article class="income">
+            <h2><%=data.type%></h2>
+            <h3>You added "<%=data.source%>"</h3>
+            <h4>Amount:<%=data.amount%></h4>
+            <span><%=data.source%> got in <%=data.date.toString().substring(0,15)%></span><br>
+            <span>Added Date:<%=data.createdAt.toString().substring(0,15)%></span>
+            <address>Time:<%=data.createdAt.toString().substring(16,25)%></address>
+        </article>
+   <% }else{%>
+        <article class="expense">
+            <h2><%=data.type%></h2>
+            <h3>Category:<%=data.category%></h3>
+            <h4>Amount:<%=data.amount%></h4>
+            <span>Date:<%=data.createdAt.toString().substring(0,15)%></span>
+            <address>Time:<%=data.createdAt.toString().substring(16,25)%></address>
+        </article>
+  <% }%>
+    <%})%>
+    
+  
+    </section>
+    
+</main>
+</body>
+</html>
