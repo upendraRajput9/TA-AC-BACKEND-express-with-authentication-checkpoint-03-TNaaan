@@ -1,0 +1,32 @@
+{
+  "name": "expense-tracker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "~1.4.4",
+    "date-fns": "^2.28.0",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "ejs-lint": "^1.2.2",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "flash": "^1.1.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.3.2",
+    "morgan": "~1.9.1",
+    "nodemailer": "^6.7.5",
+    "otp-generator": "^4.0.0",
+    "passport": "^0.5.2",
+    "passport-github": "^1.1.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}

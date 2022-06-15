@@ -1,0 +1,34 @@
+<%- include('partial/header'); %>
+        
+    <main>
+        <%if(list[0].type=="income"){%>
+            <h2>Incomes</h2>
+           <%}else{%>
+            <h2>Expenses</h2>
+        <%}%>
+        <div>
+            <%list.forEach(data=>{%>
+                <%if(data.category){%>
+
+                    <article>
+                    <h2>Category:<%=data.category%></h2>
+                   <h3>Amount:<%=data.amount%></h3>
+                     <span>Date:<%=data.date.toString().substring(0,15)%></span><br>
+                     <a href="/expenses/delete/<%=data._id%>/<%=data.type%>"><button>Delete</button></a>
+                     <a href="/expenses/edit/<%=data._id%>/<%=data.type%>"><button>Edit</button></a>
+                      </article>
+                      <%}else if(data.source){%>
+                        
+                <article>
+                    <h2>Source:<%=data.source%></h2>
+                    <h3>Amount:<%=data.amount%></h3>
+                    <span>Date:<%=data.date.toString().substring(0,15)%></span><br>
+                    <a href="/expenses/delete/<%=data._id%>/<%=data.type%>"><button>Delete</button></a>
+                    <a href="/expenses/edit/<%=data._id%>/<%=data.type%>"><button>Edit</button></a>
+                </article>
+                <%}%>
+            <%})%>
+        </div>
+    </main>
+</body>
+</html>

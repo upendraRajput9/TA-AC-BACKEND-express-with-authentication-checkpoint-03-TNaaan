@@ -1,0 +1,20 @@
+<%- include('partial/header'); %>
+    <main>
+        <section>
+            <div>
+            <h2 class="income" >Total Income : <%=totalIncome%></h2>
+            <a href="/expenses/income">
+            <button>Income</button></a>
+        </div>
+        <div>
+            <h2 class="expense">Total Expense : <%=totalExpense%></h2>
+            <a href="/expenses/expense">
+            <button>Expense</button></a>
+            </div>
+        </div>
+        <h2>Saving : <%=totalIncome-totalExpense%></h2>
+        </section>
+        <%- include('partial/aside'); %>
+     </main>
+    </body>
+    </html> 

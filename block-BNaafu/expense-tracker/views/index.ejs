@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+    
+  </header>
+  <main>
+    
+    <section>
+      <%if(!user){%>
+      <a href="/users">
+      <button>Register</button></a>
+      <a href="/users/login">
+        <button>Login</button></a>
+          <a href="/auth/github"><button>login with GitHub</button></a>
+          <a href="/auth/google"><button>login with Google</button></a>
+          <%}else{%>
+            <nav>
+            <a href="/logout"><button>Logout</button></a>
+              <a href="/expenses/dashboard"><button>Home</button></a>
+              <a href="/expenses/history"><button>Activity</button></a>
+              <a href="/expenses/"><button>Add ExpenseOrIncome</button></a>
+          </nav>
+            <%}%>
+    </section>
+    
+  </main>
+  </body>
+</html>

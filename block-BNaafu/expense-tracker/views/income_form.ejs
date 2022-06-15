@@ -1,0 +1,19 @@
+<%- include('partial/header'); %>
+   <main>
+       <section>
+           <section>
+               <form action="/expenses" method="POST">
+                   <select name="type">
+                       <option value="income">Income</option>
+                       <option value="expense">Expense</option>
+                   </select>
+                   <input type="text" placeholder="Source" name="source">
+                   <input type="number" name="amount" placeholder="Amount">
+                   <input type="date" name="date" placeholder="Date">
+                   <input type="submit">
+               </form>
+           </section>
+       </section>
+   </main> 
+</body>
+</html>

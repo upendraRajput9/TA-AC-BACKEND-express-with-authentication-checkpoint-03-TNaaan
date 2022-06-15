@@ -1,0 +1,27 @@
+<%- include('partial/header'); %>
+   <main>
+       <section>
+           <section>
+               <form action="/expenses" method="POST">
+                <%if(data.type=="income"){%>
+                   <select name="type">
+                       <option value="income">Income</option>
+                       <option value="expense">Expense</option>
+                   </select>
+                   <input type="text" value="<%=data.source%>" placeholder="Source" name="source">
+                <%}else{%>
+                    <select name="type">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option> 
+                    </select>
+                    <input type="text" value="<%=data.category%>" placeholder="Source" name="category">
+                <%}%>
+                   <input type="number" name="amount" value="<%=data.amount%>" placeholder="Amount">
+                   <input type="date" name="date" value="<%=date%>" placeholder="Date">
+                   <input type="submit">
+               </form>
+           </section>
+       </section>
+   </main> 
+</body>
+</html>
