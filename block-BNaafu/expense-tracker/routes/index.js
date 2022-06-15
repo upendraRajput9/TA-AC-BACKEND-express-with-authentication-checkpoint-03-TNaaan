@@ -4,24 +4,23 @@ var Otp = require('../models/otp')
 var router = express.Router()
 var passport = require('passport');
 var nodemailer = require('nodemailer');
-const otp = require('../models/otp');
+
 
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  console.log(req.user,"🤩")
   res.render('index', { title: 'Express' })
-})
+});
 
 router.get('/sucess', (req, res) => {
   res.render('sucess')
-})
+});
 
 router.get('/failure', (req, res) => {
   res.render('failure')
-})
+});
 
-router.get('/auth/github', passport.authenticate('github',{ scope: [ 'email' ] }))
+router.get('/auth/github', passport.authenticate('github',{ scope: [ 'email' ] }));
 
 router.get(
   '/auth/github/callback',
@@ -99,7 +98,6 @@ text:data.code
 };
 
 tansporter.sendMail(mailOptions,function(err,info){
-  
   if(err){
     console.log(err)
     res.redirect('/users/otp-form')
